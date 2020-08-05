@@ -5,7 +5,8 @@ import {
   Text,
   View,
   Animated,
-  TouchableOpacity
+  TouchableOpacity,
+  ScrollView
 } from "react-native";
 import ActionButtonItem from "./ActionButtonItem";
 import {
@@ -216,22 +217,24 @@ const ActionButton = props => {
 
     return (
       <View style={actionStyle} pointerEvents={"box-none"}>
-        {actionButtons.map((ActionButton, idx) => (
-          <ActionButtonItem
-            key={idx}
-            anim={anim.current}
-            {...props}
-            {...ActionButton.props}
-            parentSize={props.size}
-            btnColor={props.btnOutRange}
-            onPress={() => {
-              if (props.autoInactive) {
-                timeout.current = setTimeout(reset, 200);
-              }
-              ActionButton.props.onPress();
-            }}
-          />
-        ))}
+        <ScrollView>
+          {actionButtons.map((ActionButton, idx) => (
+            <ActionButtonItem
+              key={idx}
+              anim={anim.current}
+              {...props}
+              {...ActionButton.props}
+              parentSize={props.size}
+              btnColor={props.btnOutRange}
+              onPress={() => {
+                if (props.autoInactive) {
+                  timeout.current = setTimeout(reset, 200);
+                }
+                ActionButton.props.onPress();
+              }}
+            />
+          ))}
+        </ScrollView>
       </View>
     );
   };

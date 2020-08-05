@@ -1,5 +1,8 @@
-# react-native-action-button
+# react-native-action-button-scrollview
+
 customizable multi-action-button component for react-native
+
+Added a scrollview to the Items to allow scrolling when the number of items is too large
 
 ![react-native-action-button demo](http://i.giphy.com/26BkMir9IcAhqe4EM.gif)
 ![react-native-action-button demo](http://i.giphy.com/xTcnTeW9BBXh8wMhLq.gif)
