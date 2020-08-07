@@ -217,7 +217,8 @@ const ActionButton = props => {
 
     return (
       <View style={actionStyle} pointerEvents={"box-none"}>
-        <ScrollView>
+        <ScrollView contentContainerStyle={styles.scrollview}>
+          <View style={styles.view}>
           {actionButtons.map((ActionButton, idx) => (
             <ActionButtonItem
               key={idx}
@@ -234,6 +235,8 @@ const ActionButton = props => {
               }}
             />
           ))}
+          </View>
+         
         </ScrollView>
       </View>
     );
@@ -408,6 +411,15 @@ const styles = StyleSheet.create({
     marginTop: -4,
     fontSize: 24,
     backgroundColor: "transparent"
+  },
+  scrollview: {
+    flexGrow: 1,
+    justifyContent: 'space-between',
+    flexDirection: 'column'
+  },
+  view: {
+    flex: 1, 
+    justifyContent: 'flex-end'
   }
 });
 export default ActionButton;
