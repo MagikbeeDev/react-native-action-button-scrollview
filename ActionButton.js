@@ -216,7 +216,7 @@ const ActionButton = props => {
     };
 
     return (
-      <View style={actionStyle} pointerEvents={"box-none"}>
+      <TouchableOpacity style={actionStyle} onPress={reset}>
         <ScrollView contentContainerStyle={styles.scrollview}>
           <View style={styles.view}>
           {actionButtons.map((ActionButton, idx) => (
@@ -238,7 +238,7 @@ const ActionButton = props => {
           </View>
          
         </ScrollView>
-      </View>
+      </TouchableOpacity>
     );
   };
 
